@@ -8,7 +8,7 @@
 import Foundation
 
 public struct BBCharacter: Codable, Identifiable {
-    let id: Int
+    public let id: Int
     let name: String
     let birthday: String?
     let occupation: [String]?

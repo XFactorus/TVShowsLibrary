@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Result
 public struct RMCharacter: Codable, Identifiable {
-    let id: Int
+    public let id: Int
     let name: String
     let status: String?
     let species: String?

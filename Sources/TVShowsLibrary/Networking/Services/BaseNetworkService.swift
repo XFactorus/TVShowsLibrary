@@ -1,6 +1,6 @@
 import Foundation
 
-class BaseNetworkService {
+public class BaseNetworkService {
 
     var environment: NetworkEnvironment = .production
     
