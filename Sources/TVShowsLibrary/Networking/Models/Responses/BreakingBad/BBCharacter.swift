@@ -24,7 +24,7 @@ public struct BBCharacter: Codable, Identifiable {
         case betterCallSaulAppearance = "better_call_saul_appearance"
     }
     
-    static func getMockCharacter() -> BBCharacter {
+    public static func getMockCharacter() -> BBCharacter {
         return BBCharacter(id: 1,
                            name: "Walter White",
                            birthday: "09-07-1958",

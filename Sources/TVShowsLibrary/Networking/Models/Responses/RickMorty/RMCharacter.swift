@@ -21,7 +21,7 @@ public struct RMCharacter: Codable, Identifiable {
     public let url: String?
     public let created: String?
     
-    static func getMockCharacter() -> RMCharacter {
+    public static func getMockCharacter() -> RMCharacter {
         return RMCharacter(id: 1,
                            name: "Rick Sanchez",
                            status: "Alive",
@@ -38,7 +38,7 @@ public struct RMCharacter: Codable, Identifiable {
 }
 
 // MARK: - Location
-struct RMLocation: Codable {
+public struct RMLocation: Codable {
     let name: String
     let url: String
 }

@@ -4,7 +4,7 @@ final public class RickMortyApiService: BaseNetworkService, IService {
     
     let router = Router<RickMortyApi>()
     
-    piblic class var service: RickMortyApiService {
+    public class var service: RickMortyApiService {
         if let service: RickMortyApiService = TVShowsLibraryServiceLocator.service() {
             return service
         }
