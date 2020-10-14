@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BBCharacter: Codable, Identifiable {
+public struct BBCharacter: Codable, Identifiable {
     let id: Int
     let name: String
     let birthday: String?

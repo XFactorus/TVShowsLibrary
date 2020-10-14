@@ -1,6 +1,6 @@
 import Foundation
 
-final class RickMortyApiService: BaseNetworkService, IService {
+final public class RickMortyApiService: BaseNetworkService, IService {
     
     let router = Router<RickMortyApi>()
     

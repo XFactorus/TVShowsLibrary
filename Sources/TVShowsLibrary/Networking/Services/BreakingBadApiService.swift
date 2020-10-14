@@ -1,6 +1,6 @@
 import Foundation
 
-final class BreakingBadApiService: BaseNetworkService, IService {
+final public class BreakingBadApiService: BaseNetworkService, IService {
     
     let router = Router<BreakingBadApi>()
     
