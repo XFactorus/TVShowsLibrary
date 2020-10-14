@@ -10,16 +10,16 @@ import Foundation
 // MARK: - Result
 public struct RMCharacter: Codable, Identifiable {
     public let id: Int
-    let name: String
-    let status: String?
-    let species: String?
-    let type: String?
-    let gender: String?
-    let origin, location: RMLocation?
-    let image: String?
-    let episode: [String]?
-    let url: String?
-    let created: String?
+    public let name: String
+    public let status: String?
+    public let species: String?
+    public let type: String?
+    public let gender: String?
+    public let origin, location: RMLocation?
+    public let image: String?
+    public let episode: [String]?
+    public let url: String?
+    public let created: String?
     
     static func getMockCharacter() -> RMCharacter {
         return RMCharacter(id: 1,

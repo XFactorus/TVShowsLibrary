@@ -9,14 +9,14 @@ import Foundation
 
 public struct BBCharacter: Codable, Identifiable {
     public let id: Int
-    let name: String
-    let birthday: String?
-    let occupation: [String]?
-    let img: String?
-    let status, nickname: String?
-    let appearance: [Int]?
-    let portrayed, category: String?
-    let betterCallSaulAppearance: [Int]?
+    public let name: String
+    public let birthday: String?
+    public let occupation: [String]?
+    public let img: String?
+    public let status, nickname: String?
+    public let appearance: [Int]?
+    public let portrayed, category: String?
+    public let betterCallSaulAppearance: [Int]?
     
     enum CodingKeys: String, CodingKey {
         case id = "char_id"

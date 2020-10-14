@@ -4,7 +4,7 @@ final public class RickMortyApiService: BaseNetworkService, IService {
     
     let router = Router<RickMortyApi>()
     
-    class var service: RickMortyApiService {
+    piblic class var service: RickMortyApiService {
         if let service: RickMortyApiService = TVShowsLibraryServiceLocator.service() {
             return service
         }
@@ -14,15 +14,15 @@ final public class RickMortyApiService: BaseNetworkService, IService {
         return service
     }
     
-    func clear() {
+    public func clear() {
         
     }
     
-    func remove() {
+    public func remove() {
         
     }
   
-    func loadRMCharacters( _ page: Int, completion: @escaping (_ characters: [RMCharacter]?, _ error: String?)->()) {
+    public func loadRMCharacters( _ page: Int, completion: @escaping (_ characters: [RMCharacter]?, _ error: String?)->()) {
         
         router.request(.getCharacters(page: page)) { (data, response, error) in
             if error != nil {
@@ -53,7 +53,7 @@ final public class RickMortyApiService: BaseNetworkService, IService {
         }
     }
     
-    func downloadRMImage(imageUrl: String, completion: @escaping (_ responseModel: Data?, _ error: String?)->()) {
+    public func downloadRMImage(imageUrl: String, completion: @escaping (_ responseModel: Data?, _ error: String?)->()) {
         
         let router = Router<RickMortyApi>()
         

@@ -4,7 +4,7 @@ final public class BreakingBadApiService: BaseNetworkService, IService {
     
     let router = Router<BreakingBadApi>()
     
-    class var service: BreakingBadApiService {
+    public class var service: BreakingBadApiService {
         if let service: BreakingBadApiService = TVShowsLibraryServiceLocator.service() {
             return service
         }
@@ -14,15 +14,15 @@ final public class BreakingBadApiService: BaseNetworkService, IService {
         return service
     }
     
-    func clear() {
+    public func clear() {
         
     }
     
-    func remove() {
+    public func remove() {
         
     }
     
-    func loadBBCharacters(limit: Int, offset: Int, completion: @escaping (_ characters: [BBCharacter]?, _ error: String?)->()) {
+    public func loadBBCharacters(limit: Int, offset: Int, completion: @escaping (_ characters: [BBCharacter]?, _ error: String?)->()) {
         
         router.request(.getCharacters(limit: limit, offset: offset)) { (data, response, error) in
             if error != nil {
@@ -53,7 +53,7 @@ final public class BreakingBadApiService: BaseNetworkService, IService {
         }
     }
     
-    func downloadBBImage(imageUrl: String, completion: @escaping (_ responseModel: Data?, _ error: String?)->()) {
+    public func downloadBBImage(imageUrl: String, completion: @escaping (_ responseModel: Data?, _ error: String?)->()) {
         
         let router = Router<BreakingBadApi>()
         
