@@ -11,7 +11,7 @@ protocol IServiceLocator {
     func service<T>() -> T?
 }
 
-final class TVShowsLibraryServiceLocator: IServiceLocator {
+final public class TVShowsLibraryServiceLocator: IServiceLocator {
     
     private static let instance = TVShowsLibraryServiceLocator()
     private lazy var services: [String: Any] = [:]
@@ -21,15 +21,15 @@ final class TVShowsLibraryServiceLocator: IServiceLocator {
         return instance.service()
     }
     
-    class func addService<T>(_ service: T) {
+    public class func addService<T>(_ service: T) {
         return instance.addService(service)
     }
     
-    class func clear() {
+    public class func clear() {
         instance.services.removeAll()
     }
     
-    class func removeService<T>(_ service: T) {
+    public class func removeService<T>(_ service: T) {
         instance.removeService(service)
     }
     
