@@ -19,7 +19,7 @@ final public class RickMortyApiService: BaseNetworkService, IService {
     }
     
     public func remove() {
-        
+        TVShowsLibraryServiceLocator.removeService(self)
     }
   
     public func loadRMCharacters( _ page: Int, completion: @escaping (_ characters: [RMCharacter]?, _ error: String?)->()) {

@@ -19,7 +19,7 @@ final public class BreakingBadApiService: BaseNetworkService, IService {
     }
     
     public func remove() {
-        
+        TVShowsLibraryServiceLocator.removeService(self)
     }
     
     public func loadBBCharacters(limit: Int, offset: Int, completion: @escaping (_ characters: [BBCharacter]?, _ error: String?)->()) {
