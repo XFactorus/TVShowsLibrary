@@ -4,6 +4,10 @@ final public class BreakingBadApiService: BaseNetworkService, IService {
     
     let router = Router<BreakingBadApi>()
     
+    override public init() {
+        super.init()
+    }
+    
     public class var service: BreakingBadApiService {
         if let service: BreakingBadApiService = TVShowsLibraryServiceLocator.service() {
             return service
