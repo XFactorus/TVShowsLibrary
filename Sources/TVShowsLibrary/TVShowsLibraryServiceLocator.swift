@@ -17,7 +17,7 @@ final public class TVShowsLibraryServiceLocator: IServiceLocator {
     private lazy var services: [String: Any] = [:]
     
     // MARK: - Public methods
-    class func service<T>() -> T? {
+    public class func service<T>() -> T? {
         return instance.service()
     }
     
