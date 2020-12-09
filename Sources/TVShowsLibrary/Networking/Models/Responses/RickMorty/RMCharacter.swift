@@ -1,44 +1,48 @@
-//
-//  RMCharacter.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 24.09.2020.
-//
-
 import Foundation
+import RealmSwift
 
 // MARK: - Result
-public struct RMCharacter: Codable, Identifiable {
-    public let id: Int
-    public let name: String
-    public let status: String?
-    public let species: String?
-    public let type: String?
-    public let gender: String?
-    public let origin, location: RMLocation?
-    public let image: String?
-    public let episode: [String]?
-    public let url: String?
-    public let created: String?
+public class RMCharacter: Object, Codable, Identifiable {
+    @objc public dynamic var id: Int = 0
+    @objc public dynamic var name: String = ""
+    @objc public dynamic var status: String = ""
+    @objc public dynamic var species: String = ""
+    @objc public dynamic var type: String = ""
+    @objc public dynamic var gender: String = ""
+    @objc public dynamic var origin: RMLocation?
+    @objc public dynamic var location: RMLocation?
+    @objc public dynamic var image: String = ""
+    var episode = List<String>()
+    @objc public dynamic var url: String = ""
+    @objc public dynamic var created: String = ""
+
+    public override init() {}
+    
+    public enum CodingKeys: String, CodingKey {
+        case id, name, status, species, type, gender, origin, location, image, episode, url, created
+    }
     
     public static func getMockCharacter() -> RMCharacter {
-        return RMCharacter(id: 1,
-                           name: "Rick Sanchez",
-                           status: "Alive",
-                           species: "Human",
-                           type: nil,
-                           gender: "Male",
-                           origin: RMLocation(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"),
-                           location: RMLocation(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"),
-                           image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-                           episode: nil,
-                           url: nil,
-                           created: nil)
+        let character = RMCharacter()
+        character.id = 1
+        character.name = "Rick Sanchez"
+        character.species = "Human"
+        character.gender = "Male"
+        character.image = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        return character
+    }
+    
+    public override class func primaryKey() -> String? {
+        return BBCharacter.getPrimaryKey()
+    }
+    
+    public static func getPrimaryKey() -> String {
+        return "id"
     }
 }
 
 // MARK: - Location
-public struct RMLocation: Codable {
-    let name: String
-    let url: String
+@objc public class RMLocation: Object, Codable {
+    @objc dynamic var name: String = ""
+    @objc dynamic var url: String = ""
 }
